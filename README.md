@@ -1,19 +1,11 @@
-# Linux Fundamentals Training Labs
+# Linux Fundamentals
 
-## Setup training environment
+## Setup the training environment
 
-This repository is designed to work with GitHub Codespaces (hence devcontaners).
+1. Open [Github Codespaces](https://github.com/codespaces) and create your new `cloudnativetrainings/linux-fundamentals` codespace.
+2. Verify your environment via `make verify`.
+3. Start with the [01_hello-docker](./01_hello-linux/README.mdd) lab.
 
-Make sure that you start the codespaces, make sure you select `4 cores`:
+## Teardown the training environment
 
-![codespaces-1](.images/codespaces-1.jpg)
-
-![codespaces-2](.images/codespaces-2.jpg)
-
-Please run the `pre-checks.sh` script to make sure that all required components are running:
-
-```bash
-./pre-checks.sh
-```
-
-Wait until the setup is ready, and start with the [01_hello-linux](./01_hello-linux/README.md) lab.
+1. Delete your `cloudnativetrainings/linux-fundamentals` codespace via [Github Codespaces](https://github.com/codespaces).

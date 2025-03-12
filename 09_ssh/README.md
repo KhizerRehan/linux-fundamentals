@@ -46,6 +46,7 @@ exit
 You can create a ssh config file which comes in handy. Create the file on the source machine in the location `~/.ssh/config`
 
 Add the following content to the file
+
 ```config
 Host destination
     HostName training-lf-ssh

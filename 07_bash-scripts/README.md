@@ -5,19 +5,10 @@ In this lab you will learn how to write your own bash scripts.
 ## Create your own bash script
 
 Create a file called `my-bash-script.sh` via vi with the following content
->#!/bin/bash
+
+> #!/bin/bash
 >
->echo $(date) >> my-bash-script-file.txt
-
-Or you can use `cat` command:
-
-```bash
-/bin/cat <<EOF > my-bash-script.sh
-#!/bin/bash
-
-echo \$(date) >> my-bash-script-file.txt
-EOF
-```
+> echo $(date) >> my-bash-script-file.txt
 
 ```bash
 # try to run the bash script (which will fail due to it is not executable yet)

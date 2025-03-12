@@ -3,11 +3,11 @@
 In this lab you will learn how to manage and edit files.
 
 ## Writing Files
-```bash
 
-# Create a file
+```bash
+# create a file
 touch my-file.txt
-ls -alh 
+ls -alh
 
 # Print out a file (note the file has no content yet)
 cat my-file.txt
@@ -46,6 +46,7 @@ ls -alh
 ```
 
 # Reading Files
+
 ```bash
 
 # print out all lines containing the word 'the'
@@ -60,7 +61,7 @@ cat my-file.txt | wc -c
 # for bigger files the command cat is not helpful
 cat /var/log/syslog
 
-# you can grep for specific phrases 
+# you can grep for specific phrases
 cat /var/log/syslog | grep error
 
 # you can also grep ignoring the case
@@ -76,7 +77,7 @@ less /var/log/syslog
 head /var/log/syslog
 
 # showing the first 3 lines of a file
-head -n 3 /var/log/syslog
+head -n 3 /var/log/syslog\
 
 # showing the last 3 lines of a file
 tail -n 3 /var/log/syslog
@@ -86,6 +87,7 @@ tail -f /var/log/syslog
 ```
 
 # vi
+
 ```bash
 # edit a file in vi
 vi my-file.txt

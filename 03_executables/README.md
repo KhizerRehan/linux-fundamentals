@@ -8,17 +8,14 @@ In this lab you will learn how to handle executables and we will create our own 
 # the path in linux is an environment variable, lets take a look at it
 echo $PATH
 
-# one of the entries is the following folder
+# one of the entries is the following folder (currently nothing is in it)
 ls -alh /usr/local/bin
 ```
 
 ## Creating a small application
 
 ```bash
-# switch to parent lab folder
-cd /workspaces/linux-fundamentals
-
-# for our application we will need golang on our box, lets look if it is installed 
+# for our application we will need golang on our box, lets look if it is installed
 which go
 
 # due to it does not exist we have to install it
@@ -44,6 +41,7 @@ ls -alh
 ```
 
 ## Adding the application to the path
+
 ```bash
 # if you try to run the application from a different folder it will not work out
 cd ~
@@ -51,15 +49,11 @@ cd ~
 which my-executable
 
 # lets move the executable to the folder /usr/local/bin (which is in the PATH environment variable)
-mv /workspaces/linux-fundamentals/my-executable /usr/local/bin
+mv trainings/linux_fundamentals/my-executable /usr/local/bin
 
 # now our application is known by the Linux system
 which my-executable
-
-# run the application
 my-executable
-
-# stop it
 <CTRL>+<C>
 ```
 
@@ -67,10 +61,10 @@ my-executable
 
 ```bash
 # switch back to the training folder
-cd /workspaces/linux-fundamentals
+cd ~/trainings/linux_fundamentals
 
 # lets start application in background and redirect stdout and stderr
-my-executable > my-executable.log 2>&1 & 
+my-executable > my-executable.log 2>&1 &
 
 # verify the application is running
 cat my-executable.log

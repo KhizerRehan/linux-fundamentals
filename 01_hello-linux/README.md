@@ -33,7 +33,7 @@ mkdir my-parent-dir/my-sub-dir
 # getting help about the mkdir command, try to find the right argument on your own
 mkdir --help
 
-# also the man pages give you further information about 
+# also the man pages give you further information about
 man mkdir
 
 # now create the directory with the `--parents` argument
@@ -64,7 +64,7 @@ echo "hello linux"
 env
 
 # add an environment variable
-export TRAINING_DIR="/workspaces/linux-fundamentals"
+export TRAINING_DIR="/root/trainings/linux_fundamentals"
 env
 
 # print out the environment variable (you can avoid typing some characters via clicking tab after entering `echo $TR`)

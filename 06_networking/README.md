@@ -65,13 +65,12 @@ ls -lah google_favicon_2.ico
 
 ```bash
 nslookup google.com
-# or
-dig google.com
 ```
 
 ## Getting info about ports
 
 Sometimes you are in the situation that some port is used by an application which you are not aware of. The following commands can be very helpful in those situations.
+
 ```bash
 # install the package containing the netstat tool
 apt install net-tools
@@ -96,6 +95,7 @@ ab -n 1000 -c 100 http://localhost:80/
 # Port Scanning
 
 Nmap is a very neat tool to detect security issues.
+
 ```bash
 # install nmap
 apt install nmap

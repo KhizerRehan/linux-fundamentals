@@ -17,11 +17,12 @@ chsh
 
 ## Customizing Bash
 
-You can change the bash behaviour and look and feel via inserting valid bash commands into the file '~/.bashrc'. This file gets considered each time you login to a machine. For example you can use it for 
-* Setting of Environment Variables
-* Creation of Aliases
-* Triggering executables
-* Changing the look and feel of your Bash
+You can change the bash behaviour and look and feel via inserting valid bash commands into the file '~/.bashrc'. This file gets considered each time you login to a machine. For example you can use it for
+
+- Setting of Environment Variables
+- Creation of Aliases
+- Triggering executables
+- Changing the look and feel of your Bash
 
 ```bash
 # install a weather tool

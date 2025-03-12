@@ -39,14 +39,14 @@ cat /etc/group | grep sudo
 # create password for user
 passwd my-user
 
-# verify that the user is in /etc/passwd 
+# verify that the user is in /etc/passwd
 cat /etc/passwd | grep my-user
 
-# verify that the user is in /etc/shadow and the password is hashed 
+# verify that the user is in /etc/shadow and the password is hashed
 cat /etc/shadow | grep my-user
 
 # switch to my-user and go to its home directory
-su - my-user
+su my-user
 cd
 
 # try to update the package meta-info (which will not work due to permissions)
@@ -80,7 +80,7 @@ useradd -s /bin/bash -g users -u 9001 -m my-user-a
 useradd -s /bin/bash -g users -u 9002 -m my-user-b
 
 # switch to my-user-a and create a file
-su - my-user-a
+su my-user-a
 cd
 echo "hello from user a" > my-file.txt
 ls -alh
@@ -91,7 +91,7 @@ ls -alh
 exit
 
 # switch to my-user-b and try to read the file (note that my-user-b now has not the permission to read the file)
-su - my-user-b
+su my-user-b
 cat /home/my-user-a/my-file.txt
 exit
 ```

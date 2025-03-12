@@ -3,39 +3,40 @@
 In this lab you will learn how to make use of a package manager to add and remove the installed packages on a Linux machine.
 
 ## Install Packages from the official Ubuntu Repositories
+
 ```bash
 
-# try to run Midnight Commander => `mc` (this command will fail because `mc` is not installed yet)
-mc
+# try to run `tree` (this command will fail because `tree` is not installed yet)
+tree
 
-# install mc (this command will fail due to we have to update the package metainfo first)
-apt install mc
+# install tree (this command will fail due to we have to update the package metainfo first)
+apt install tree
 
 # update the package metainfo (ignore the output concerning upgradable packages, we will cover this later)
 apt update
 
-# install `mc`
-apt install mc
+# install `tree`
+apt install tree
 
-# make use of `mc`
-mc
+# make use of `tree`
+tree
 
 # list all installed packages
 apt list --installed
 
-# lets filter for the lines with the word mc in it (we will cover pipes and grep later in detail)
-apt list --installed | grep mc
+# lets filter for the lines with the word tree in it (we will cover pipes and grep later in detail)
+apt list --installed | grep tree
 
-# print out the location of the executable `mc`
-which mc
+# print out the location of the executable `tree`
+which tree
 
-# remove the package `mc` again
-apt remove mc
+# remove the package `tree` again
+apt remove tree
 
-# now the tool `which` will deliver an empty output due to we uninstalled `mc`
-which mc
+# now the tool `which` will deliver an empty output due to we uninstalled `tree`
+which tree
 
-# upgrade all installed packages 
+# upgrade all installed packages
 # if you get a dialog with the header `Daemons using outdated libraries` click TAB and ENTER
 apt upgrade
 
@@ -72,5 +73,5 @@ apt update
 apt install docker-ce
 
 # verify the docker installation (you should get infos about the versions of docker)
-docker --version   
+docker --version
 ```

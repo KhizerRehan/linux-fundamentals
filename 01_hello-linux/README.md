@@ -64,7 +64,7 @@ echo "hello linux"
 env
 
 # add an environment variable
-export TRAINING_DIR="/root/trainings/linux_fundamentals"
+export TRAINING_DIR="/root/"
 env
 
 # print out the environment variable (you can avoid typing some characters via clicking tab after entering `echo $TR`)

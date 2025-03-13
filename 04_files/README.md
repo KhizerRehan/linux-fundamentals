@@ -45,7 +45,7 @@ rm -d my-dir-to-be-deleted
 ls -alh
 ```
 
-# Reading Files
+## Reading Files
 
 ```bash
 
@@ -86,7 +86,7 @@ tail -n 3 /var/log/syslog
 tail -f /var/log/syslog
 ```
 
-# vi
+## vi
 
 ```bash
 # edit a file in vi
@@ -98,6 +98,9 @@ insert something
 # save file and exit vi
 <ESC>
 :wq<ENTER>
+
+# verify file
+cat my-file.txt
 
 # alternatively if you want to discard your changes
 <ESC>

@@ -2,12 +2,45 @@
 
 In this lab you will learn how to switch to other machines.
 
-# Create a new key pair
+## Check the other machine
+
+You can find the IP address of the machine you will connect in the README file you received in the beginning of the training.
 
 ```bash
-# try to connect to the other vm, which will not work out due to you haven't shared your public key yet
-ssh training-lf-ssh
+# store the IP into an env variable
+export OTHER_MACHINE_IP=<IP.OF.OTHER.MACHINE>
+echo $OTHER_MACHINE_IP
 
+# verify the machine is reachable
+ping $OTHER_MACHINE_IP
+
+# verify that sshd is running on port 22
+nmap -p22 $OTHER_MACHINE_IP
+```
+
+## Connecting via password
+
+```bash
+# connect as root => you have to fill in the password, which is
+ssh root@$OTHER_MACHINE_IP
+
+# => you are now in the home folder of the other machine as user root
+
+# create a file
+touch <YOUR_NAME>.txt
+
+# verify the file exists => note that also the other trainees are creating files
+ls
+
+# exit the VM
+exit
+```
+
+> Note connecting via password is considered insecure. So let's create some safer way of authentication.
+
+## Create a new key pair
+
+```bash
 # create your key pair (you can leave all inputs blank)
 ssh-keygen
 
@@ -15,23 +48,23 @@ ssh-keygen
 ls -alh ~/.ssh
 ```
 
-# Copy the public key to the destination machine
-
-Open a new tab in the Google Cloud Shell editor
+## Copy the public key to the destination machine
 
 ```bash
-# connect to the detination machine
-gcloud compute ssh root@training-lf-ssh --zone europe-west3-a
+# copy the public key
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@$OTHER_MACHINE_IP
 
-# open the authorized_keys file via via
-vi ~/.ssh/authorized_keys
+# connect to the other machine => note that you are not asked for the password anymore
+ssh root@$OTHER_MACHINE_IP
 
-# copy and paste the content of the file ~/.ssh/id_rsa.pub of the source machine into the file ~/.ssh/authorized_keys of the destination machine
+# you can verify the allowed public keys via the following
+cat ~/.ssh/authorized_keys
 
-# afterwards you can close this Google Cloud Shell editor tab again
+# exit the other machine again
+exit
 ```
 
-# Connect from the source machine to the destination machine
+## Connect from the source machine to the destination machine
 
 ```bash
 # connect to the destination machine (note the machine name: root@training-lf-ssh)
@@ -41,39 +74,41 @@ ssh root@training-lf-ssh
 exit
 ```
 
-# SSH Config File
+> Note now it is best practice to disable password authentication on the other machine, for security reasons. This can be done via changing the sshd config of the other machine (`PermitRootLogin` and `PasswordAuthentication` in `/etc/ssh/sshd_config.d/`). But this is out of scope for this training.
+
+## SSH Config File
 
 You can create a ssh config file which comes in handy. Create the file on the source machine in the location `~/.ssh/config`
 
 Add the following content to the file
 
 ```config
-Host destination
-    HostName training-lf-ssh
+Host other-machine
+    HostName <IP.OF.OTHER.MACHINE>
     User root
 ```
 
 ```bash
-# connect to the destination machine (note the machine name: root@training-lf-ssh)
-ssh destination
+# connect to the other machine
+ssh other-machine
 
-# switch back to the source machine (note the machine name: root@training-lf)
+# switch back to the source machine
 exit
 ```
 
-# Copying files to other machines
+## Copying files to other machines
 
 ```bash
 # create a file
-echo "shared" > shared.txt
+echo "something" > <YOUR_NAME>2.txt
 
 # copy the file to the destination machine into its home folder (in our case /root/)
-scp shared.txt destination:
+scp <YOUR_NAME>2.txt other-machine:
 ```
 
-# Execute a command on another machine
+## Execute a command on another machine
 
 ```bash
 # you can trigger commands via ssh on the destination machine like this
-ssh destination "hostname && ls -alh && cat ~/shared.txt"
+ssh other-machine "hostname && ls -alh && cat ~/<YOUR_NAME>2.txt"
 ```

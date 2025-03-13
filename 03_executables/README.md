@@ -44,12 +44,12 @@ ls -alh
 
 ```bash
 # if you try to run the application from a different folder it will not work out
-cd ~
+cd /
 ./my-executable
 which my-executable
 
 # lets move the executable to the folder /usr/local/bin (which is in the PATH environment variable)
-mv trainings/linux_fundamentals/my-executable /usr/local/bin
+mv /root/my-executable /usr/local/bin
 
 # now our application is known by the Linux system
 which my-executable
@@ -61,7 +61,7 @@ my-executable
 
 ```bash
 # switch back to the training folder
-cd ~/trainings/linux_fundamentals
+cd ~
 
 # lets start application in background and redirect stdout and stderr
 my-executable > my-executable.log 2>&1 &

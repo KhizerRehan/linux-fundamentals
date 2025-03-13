@@ -34,7 +34,7 @@ source ~/.zshrc
 # now you have some syntax higlighting in place and also some good proposals from your history
 ```
 
-# Making your shell even more beautiful
+## Making your shell even more beautiful
 
 ```bash
 # git clone the theme

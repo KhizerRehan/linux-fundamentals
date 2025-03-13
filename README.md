@@ -11,7 +11,7 @@
 chmod 0400 ./ssh-private-key
 
 # connect to your VM
-ssh -F ./ssh-config kubernetes-security-vm
+ssh -F ./ssh-config linux-fundamentals-vm
 ```
 
 ## Teardown the training environment

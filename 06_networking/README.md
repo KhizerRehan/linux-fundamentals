@@ -44,7 +44,7 @@ systemctl start nginx
 curl localhost
 curl localhost:80
 curl http://localhost:80
-curl $(curl https://ipinfo.io/ip )
+curl $(curl https://ipinfo.io/ip)
 
 # get more info about the response
 curl --verbose localhost
@@ -82,17 +82,17 @@ netstat -tulpen | grep 80
 systemctl list-units  -t service --state active | grep -i nginx
 ```
 
-# Benchmarking the Webserver
+## Benchmarking the Webserver
 
 ```bash
 # install the package containing apache-ab
-apt-get install apache2-utils
+apt install apache2-utils
 
 # send 1000 requests with concurrency set to 100 to our webserver (please note the last `/`, apache-ab is a little bit picky here)
 ab -n 1000 -c 100 http://localhost:80/
 ```
 
-# Port Scanning
+## Port Scanning
 
 Nmap is a very neat tool to detect security issues.
 

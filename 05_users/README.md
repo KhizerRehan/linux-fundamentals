@@ -72,12 +72,12 @@ cat /etc/shadow | grep my-user
 cat /etc/group | grep sudo
 ```
 
-# File Permissions
+## File Permissions
 
 ```bash
 # add 2 users
-useradd -s /bin/bash -g users -u 9001 -m my-user-a
-useradd -s /bin/bash -g users -u 9002 -m my-user-b
+useradd -s /bin/bash -g users -u 9001 -m my-user-a1
+useradd -s /bin/bash -g users -u 9002 -m my-user-b1
 
 # switch to my-user-a and create a file
 su my-user-a

@@ -65,6 +65,7 @@ echo \
 
 # verify that the repository got added
 ls -alh /etc/apt/sources.list.d/
+cat /etc/apt/sources.list.d/docker.list
 
 # update apt package metadata with new packages from the recently added repository
 apt update

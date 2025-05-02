@@ -1,6 +1,6 @@
 {
   "name": "Linux Fundamentals Training Labs",
-  "image": "quay.io/kubermatic-labs/training-ghcs-linux-fundamentals-trainee-environment:1.0.1",
+  "image": "quay.io/kubermatic-labs/training-ghcs-linux-fundamentals-trainee-environment:1.0.2",
   "customizations": {
     "vscode": {
       "settings": {

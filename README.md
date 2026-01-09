@@ -7,6 +7,8 @@
 1. Run the following commands:
 
 ```bash
+
+
 # fix the permissions of your private key
 chmod 0400 ./.secrets/ssh-private-key
 

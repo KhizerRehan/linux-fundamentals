@@ -19,7 +19,7 @@ ls -alh /usr/local/bin
 which go
 
 # due to it does not exist we have to install it
-apt install golang
+apt install -y golang
 
 # check if it got installed properly
 go version
@@ -43,8 +43,10 @@ ls -alh
 ## Adding the application to the path
 
 ```bash
-# if you try to run the application from a different folder it will not work out
+# switch to the directory /root/
 cd /
+
+# due to the executable does not exist in the directory /root/ this will not work
 ./my-executable
 which my-executable
 
@@ -53,6 +55,8 @@ mv /root/my-executable /usr/local/bin
 
 # now our application is known by the Linux system
 which my-executable
+
+# now run the executable from the directory /root/
 my-executable
 <CTRL>+<C>
 ```

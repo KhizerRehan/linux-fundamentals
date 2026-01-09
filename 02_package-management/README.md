@@ -59,18 +59,20 @@ apt install \
 # add the official docker gpg key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
+# verify gpg key file was created
+ls /etc/apt/keyrings/
+
 # set up the repository
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # verify that the repository got added
-ls -alh /etc/apt/sources.list.d/
 cat /etc/apt/sources.list.d/docker.list
 
 # update apt package metadata with new packages from the recently added repository
 apt update
 
-# install docker
+# install docker (note that apt also takes care about the packages docker-ce is depending on)
 apt install docker-ce
 
 # verify the docker installation (you should get infos about the versions of docker)

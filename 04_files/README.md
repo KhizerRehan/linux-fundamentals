@@ -77,12 +77,13 @@ less /var/log/syslog
 head /var/log/syslog
 
 # showing the first 3 lines of a file
-head -n 3 /var/log/syslog\
+head -n 3 /var/log/syslog
 
 # showing the last 3 lines of a file
 tail -n 3 /var/log/syslog
 
 # wait for new data to the file and follow
+# you can exit via <CTRL>+<C>
 tail -f /var/log/syslog
 ```
 

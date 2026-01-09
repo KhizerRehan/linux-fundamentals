@@ -48,6 +48,7 @@ cat /etc/shadow | grep my-user
 # switch to my-user and go to its home directory
 su my-user
 cd
+pwd
 
 # try to update the package meta-info (which will not work due to permissions)
 apt update
@@ -75,9 +76,9 @@ cat /etc/group | grep sudo
 ## File Permissions
 
 ```bash
-# add 2 users
-useradd -s /bin/bash -g users -u 9001 -m my-user-a1
-useradd -s /bin/bash -g users -u 9002 -m my-user-b1
+# add 2 new users
+useradd -s /bin/bash -g users -u 9001 -m my-user-a
+useradd -s /bin/bash -g users -u 9002 -m my-user-b
 
 # switch to my-user-a and create a file
 su my-user-a

@@ -55,6 +55,9 @@ cd -
 
 # print out some text
 echo "hello linux"
+
+# print out current timestamp
+date
 ```
 
 ## Working with Environment Variables

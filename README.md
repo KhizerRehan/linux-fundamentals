@@ -3,17 +3,21 @@
 ## Setup the training environment
 
 1. Open [Github Codespaces](https://github.com/codespaces) and create your new `cloudnativetrainings/linux-fundamentals` codespace.
+1. Create the `.secrets`directory
+
+```bash
+mkdir /training/.secrets/
+```
+
 1. Copy the files `README.MD`, `ssh-config` and `ssh-private-key` into the directory named `.secrets` into your codespace. You can drag and top those two files into the browser.
 1. Run the following commands:
 
 ```bash
-
-
 # fix the permissions of your private key
-chmod 0400 ./.secrets/ssh-private-key
+chmod 0400 /training/.secrets/ssh-private-key
 
 # connect to your VM
-ssh -F ./.secrets/ssh-config linux-fundamentals-vm
+ssh -F /training/.secrets/ssh-config linux-fundamentals-vm
 ```
 
 ## Teardown the training environment

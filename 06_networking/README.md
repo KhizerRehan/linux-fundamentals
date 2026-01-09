@@ -16,9 +16,10 @@ curl https://wtfismyip.com/json
 
 ```bash
 # install nginx
-apt install nginx
+apt install -y nginx
 
 # check the state of the nginx service (note that you get the service config file with this command)
+# you can exit via pressing the key q
 systemctl status nginx
 
 # take a look into this file (this is how you configure services in Linux, but that is out of scope for this training)
@@ -73,7 +74,7 @@ Sometimes you are in the situation that some port is used by an application whic
 
 ```bash
 # install the package containing the netstat tool
-apt install net-tools
+apt install -y net-tools
 
 # find the application which is using port 80
 netstat -tulpen | grep 80
@@ -82,11 +83,17 @@ netstat -tulpen | grep 80
 systemctl list-units  -t service --state active | grep -i nginx
 ```
 
+## Sending multiple requests to the Webserver
+
+```bash
+while true; do curl -I http://localhost:80; sleep 1s; done;
+```
+
 ## Benchmarking the Webserver
 
 ```bash
 # install the package containing apache-ab
-apt install apache2-utils
+apt install -y apache2-utils
 
 # send 1000 requests with concurrency set to 100 to our webserver (please note the last `/`, apache-ab is a little bit picky here)
 ab -n 1000 -c 100 http://localhost:80/
@@ -98,7 +105,7 @@ Nmap is a very neat tool to detect security issues.
 
 ```bash
 # install nmap
-apt install nmap
+apt install -y nmap
 
 # see the open ports on your machine
 nmap localhost

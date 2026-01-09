@@ -1,3 +1,7 @@
+# secrets dir handling
+
+could be done better
+
 # labs
 
 installation of dive is missing in images lab

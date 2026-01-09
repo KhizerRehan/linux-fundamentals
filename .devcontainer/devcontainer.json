@@ -1,6 +1,8 @@
 {
   "name": "Linux Fundamentals Training Labs",
   "image": "quay.io/kubermatic-labs/training-ghcs-linux-fundamentals-trainee-environment:1.0.2",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/training/,type=bind",
+  "workspaceFolder": "/training/",
   "customizations": {
     "vscode": {
       "settings": {
@@ -24,7 +26,8 @@
           ".git/": true,
           ".gitignore": true,
           ".devcontainer/": true,
-          ".99_todos/": true
+          ".99_todos/": true,
+          "makefile": true
         }
       }
     }

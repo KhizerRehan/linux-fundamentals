@@ -32,5 +32,6 @@
       }
     }
   },
-  "remoteUser": "root"
+  "remoteUser": "root",
+  "postStartCommand": "/bin/bash mkdir /training/.secrets/"
 }

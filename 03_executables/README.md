@@ -48,6 +48,8 @@ cd /
 
 # due to the executable does not exist in the directory /root/ this will not work
 ./my-executable
+
+# also the binary is not in the path, so this will not provide any info
 which my-executable
 
 # lets move the executable to the folder /usr/local/bin (which is in the PATH environment variable)

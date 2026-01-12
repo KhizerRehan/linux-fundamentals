@@ -9,7 +9,7 @@ ZSH brings in some neat behaviour and good styling into your daily work with Lin
 cat /etc/passwd | grep root
 
 # install zsh
-apt install zsh
+apt install -y zsh
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -32,6 +32,8 @@ vi ~/.zshrc
 source ~/.zshrc
 
 # now you have some syntax higlighting in place and also some good proposals from your history
+# eg if you type in `ech` it is colored red, if you add an `o` it gets colored green due to this is an valid binary within your path
+# if you type in cat you get proposals from your history, you can navigate those with the arrow keys
 ```
 
 ## Making your shell even more beautiful

@@ -11,7 +11,7 @@ crontab -l
 crontab -e
 
 # add a cronjob via appending the following line (which executes the command every minute)
-* * * * * echo $(date) >> /root/cron_output.log
+* * * * * date >> /root/cron_output.log
 
 # verify the cronjob is working (maybe you have to wait for a minute for it), you can exit the command `watch` via <CTRL>+<C>
 watch -n 1 cat cron_output.log

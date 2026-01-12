@@ -37,7 +37,7 @@ apt remove tree
 which tree
 
 # upgrade all installed packages
-# if you get a dialog with the header `Daemons using outdated libraries` click TAB and ENTER
+# if you get a dialog with the header `Daemons using outdated libraries` some linux services have to be restarted, so the changes are taken into account. Please select all of them.
 apt upgrade
 
 # you can chain commands like this

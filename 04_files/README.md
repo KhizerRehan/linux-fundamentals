@@ -89,6 +89,8 @@ tail -f /var/log/syslog
 
 ## vi
 
+### changing files
+
 ```bash
 # edit a file in vi
 vi my-file.txt
@@ -102,8 +104,21 @@ insert something
 
 # verify file
 cat my-file.txt
+```
 
-# alternatively if you want to discard your changes
+### revert made changes in files
+
+```bash
+# edit a file in vi
+vi my-file.txt
+
+# to get into the insert mode click `i` and add some text
+insert something
+
+# discard your changes
 <ESC>
 :q!<ENTER>
+
+# verify file
+cat my-file.txt
 ```

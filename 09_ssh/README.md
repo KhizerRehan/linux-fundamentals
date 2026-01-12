@@ -21,7 +21,7 @@ nmap -p22 $OTHER_MACHINE_IP
 ## Connecting via password
 
 ```bash
-# connect as root => you have to fill in the password, which is
+# connect as root => you have to fill in the password (which I will tell you ;) )
 ssh root@$OTHER_MACHINE_IP
 
 # => you are now in the home folder of the other machine as user root
@@ -51,7 +51,7 @@ ls -alh ~/.ssh
 ## Copy the public key to the destination machine
 
 ```bash
-# copy the public key
+# copy your public key
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@$OTHER_MACHINE_IP
 
 # connect to the other machine => note that you are not asked for the password anymore
@@ -64,16 +64,6 @@ cat ~/.ssh/authorized_keys
 exit
 ```
 
-## Connect from the source machine to the destination machine
-
-```bash
-# connect to the destination machine (note the machine name: root@training-lf-ssh)
-ssh root@training-lf-ssh
-
-# switch back to the source machine (note the machine name: root@training-lf)
-exit
-```
-
 > Note now it is best practice to disable password authentication on the other machine, for security reasons. This can be done via changing the sshd config of the other machine (`PermitRootLogin` and `PasswordAuthentication` in `/etc/ssh/sshd_config.d/`). But this is out of scope for this training.
 
 ## SSH Config File
@@ -82,13 +72,18 @@ You can create a ssh config file which comes in handy. Create the file on the so
 
 Add the following content to the file
 
-```config
+```bash
+cat <<EOF > /root/.ssh/config
 Host other-machine
-    HostName <IP.OF.OTHER.MACHINE>
+    HostName $OTHER_MACHINE_IP
     User root
+EOF
 ```
 
 ```bash
+# verify ssh config file
+cat /root/.ssh/config
+
 # connect to the other machine
 ssh other-machine
 
@@ -110,5 +105,5 @@ scp <YOUR_NAME>2.txt other-machine:
 
 ```bash
 # you can trigger commands via ssh on the destination machine like this
-ssh other-machine "hostname && ls -alh && cat ~/<YOUR_NAME>2.txt"
+ssh other-machine "hostname && ls -alh"
 ```

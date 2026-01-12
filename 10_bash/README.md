@@ -11,7 +11,7 @@ cat /etc/shells
 # see the current shell
 echo $SHELL
 
-# change to a different shell
+# you can change the shell with the following command, but keep /bin/bash your shell
 chsh
 ```
 
@@ -67,6 +67,7 @@ PS1='\[\033[1;73m\][$(date +%H:%M:%S)]\[\033[1;36m\][\[\033[1;34m\]\u\[\033[1;33
 
 ```bash
 # you can see your bash history in this file
+# note that the recent contents get buffered and will be written into this file when you exit the terminal
 cat ~/.bash_history
 
 # or you can use the history command

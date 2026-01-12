@@ -72,7 +72,4 @@ env
 
 # print out the environment variable (you can avoid typing some characters via clicking tab after entering `echo $TR`)
 echo $TRAINING_DIR
-
-# change directory to the training dir
-cd $TRAINING_DIR
 ```

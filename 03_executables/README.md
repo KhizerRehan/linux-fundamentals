@@ -43,7 +43,7 @@ ls -alh
 ## Adding the application to the path
 
 ```bash
-# switch to the directory /root/
+# switch to the directory /
 cd /
 
 # due to the executable does not exist in the directory /root/ this will not work

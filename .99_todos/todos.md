@@ -1,16 +1,15 @@
-# general
-magazine
-academy cloudinit stuff
-cks
+# init
 
-# init 
 rebooting linux machines after cloud init
 
-# topics
-* file handling 04 => eof stuff
+# ssh
+
+ssh-keygen with password and storing the password to ssh-agent?
+
+# not covered yet
+
 * Linux Services
 * envsubst
-* while loop => while true; do echo $(date) >> my-file.txt; sleep 1; done;
 * bash completion
 * makefiles
 * reboot and shutdown
@@ -27,5 +26,5 @@ rebooting linux machines after cloud init
 * sed => sed -i 's/\(preemptible *=\).*/\1 true/' ~/kubeone/output.tf
 * advanced vi
 * bash scripting
-    * set -euxo pipefail
-    * more advanced example
+  * set -euxo pipefail
+  * more advanced example

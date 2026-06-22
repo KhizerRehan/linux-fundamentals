@@ -22,7 +22,7 @@ EOF
 # verify the content of your bash script
 cat my-bash-script.sh
 
-# try to run the bash script (which will fail due to it is not executable yet)
+# try to run the bash script (which will fail because it is not executable yet)
 ./my-bash-script.sh
 
 # make the bash script executable
@@ -33,7 +33,7 @@ ls -alh my-bash-script.sh
 # run the bash script
 ./my-bash-script.sh
 
-# verify the bash script worked out
+# verify the bash script worked
 cat my-bash-script-file.txt
 
 # try to run the script without ./
@@ -41,9 +41,9 @@ cat my-bash-script-file.txt
 my-bash-script.sh
 ```
 
-## Create a python script
+## Create a Python script
 
-Create a python script.
+Create a Python script.
 
 ```bash
 cat <<EOF > my-python-script.py
@@ -52,15 +52,15 @@ print('Hello from Python')
 EOF
 ```
 
-> Note that the Hash-Bang line does not define the binary to run the code explicitely. This will cause that the first binary called python3 in the path will run the script.
+> Note that the Hash-Bang line does not define the binary to run the code explicitly. This will cause that the first binary called python3 in the path will run the script.
 
 ```bash
-# verify the content of your python script
+# verify the content of your Python script
 cat my-python-script.py
 
-# make the python script executable
+# make the Python script executable
 chmod 700 my-python-script.py
 
-# run the python script
+# run the Python script
 ./my-python-script.py
 ```

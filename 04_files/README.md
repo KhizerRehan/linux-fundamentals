@@ -70,7 +70,7 @@ cat /var/log/syslog | grep -i ERROR
 # you can also grep using regular expressions
 cat /var/log/syslog | grep -i '^.*kernel.*docker.*$'
 
-# navigating through files (via arrow down and up, to escape less click q)
+# navigating through files (via arrow down and up, to exit less press q)
 less /var/log/syslog
 
 # showing the first lines of a file
@@ -95,7 +95,7 @@ tail -f /var/log/syslog
 # edit a file in vi
 vi my-file.txt
 
-# to get into the insert mode click `i` and add some text
+# to get into insert mode press `i` and add some text
 insert something
 
 # save file and exit vi
@@ -106,13 +106,13 @@ insert something
 cat my-file.txt
 ```
 
-### revert made changes in files
+### reverting changes in files
 
 ```bash
 # edit a file in vi
 vi my-file.txt
 
-# to get into the insert mode click `i` and add some text
+# to get into insert mode press `i` and add some text
 insert something
 
 # discard your changes

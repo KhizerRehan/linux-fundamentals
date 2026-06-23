@@ -1,6 +1,6 @@
 # ZSH
 
-ZSH brings in some neat behaviour and good styling into your daily work with Linux Machines. Lets give it a try.
+ZSH brings in some neat behaviour and good styling into your daily work with Linux machines. Let's give it a try.
 
 ## Install ZSH
 
@@ -31,9 +31,9 @@ vi ~/.zshrc
 # execute the file again
 source ~/.zshrc
 
-# now you have some syntax higlighting in place and also some good proposals from your history
-# eg if you type in `ech` it is colored red, if you add an `o` it gets colored green due to this is an valid binary within your path
-# if you type in cat you get proposals from your history, you can navigate those with the arrow keys
+# now you have some syntax highlighting in place and also some good proposals from your history
+# e.g., if you type in `ech` it is colored red, if you add an `o` it gets colored green because this is a valid binary within your path
+# if you type in `cat` you get proposals from your history, you can navigate those with the arrow keys
 ```
 
 ## Making your shell even more beautiful

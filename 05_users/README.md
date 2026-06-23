@@ -2,13 +2,13 @@
 
 In this lab you will learn how to manage users.
 
-## Getting infos about Users
+## Getting Info about Users
 
 ```bash
-# get info about the user you are logged in
+# get info about the user you are logged in as
 id
 
-# see who is logged in into the machine (currently it is probably only you)
+# see who is logged into the machine (currently it is probably only you)
 who
 
 # see who logged in at which time
@@ -50,13 +50,13 @@ su my-user
 cd
 pwd
 
-# try to update the package meta-info (which will not work due to permissions)
+# try to update the package meta-info (which will not work due to lack of permissions)
 apt update
 
-# try to update the package meta-info via upgrading to sudoer (which will not work due to my-user is not in the group of sudoers)
+# try to update the package meta-info via upgrading to sudoer (which will not work because my-user is not in the group of sudoers)
 sudo apt update
 
-# give the user my-user sudo permissions (note you have to exit to become root again for doing this)
+# give the user my-user sudo permissions (note you have to exit to become root again to do this)
 exit
 usermod -aG sudo my-user
 cat /etc/group | grep sudo
@@ -91,7 +91,7 @@ chmod 600 my-file.txt
 ls -alh
 exit
 
-# switch to my-user-b and try to read the file (note that my-user-b now has not the permission to read the file)
+# switch to my-user-b and try to read the file (note that my-user-b does not have permission to read the file)
 su my-user-b
 cat /home/my-user-a/my-file.txt
 exit

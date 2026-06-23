@@ -4,7 +4,7 @@ In this lab you will learn how to switch to other machines.
 
 ## Check the other machine
 
-You can find the IP address of the machine you will connect in the README file you received in the beginning of the training.
+You can find the IP address of the machine you will connect to in the README file you received in the beginning of the training.
 
 ```bash
 # store the IP into an env variable
@@ -36,7 +36,7 @@ ls
 exit
 ```
 
-> Note connecting via password is considered insecure. So let's create some safer way of authentication.
+> Note: connecting via password is considered insecure. So let's create a safer way of authentication.
 
 ## Create a new key pair
 
@@ -64,11 +64,11 @@ cat ~/.ssh/authorized_keys
 exit
 ```
 
-> Note now it is best practice to disable password authentication on the other machine, for security reasons. This can be done via changing the sshd config of the other machine (`PermitRootLogin` and `PasswordAuthentication` in `/etc/ssh/sshd_config.d/`). But this is out of scope for this training.
+> Note: now it is best practice to disable password authentication on the other machine for security reasons. This can be done by changing the sshd config of the other machine (`PermitRootLogin` and `PasswordAuthentication` in `/etc/ssh/sshd_config.d/`). But this is out of scope for this training.
 
 ## SSH Config File
 
-You can create a ssh config file which comes in handy. Create the file on the source machine in the location `~/.ssh/config`
+You can create an SSH config file which comes in handy. Create the file on the source machine in the location `~/.ssh/config`
 
 Add the following content to the file
 
@@ -81,7 +81,7 @@ EOF
 ```
 
 ```bash
-# verify ssh config file
+# verify the SSH config file
 cat /root/.ssh/config
 
 # connect to the other machine
@@ -106,4 +106,14 @@ scp <YOUR_NAME>2.txt other-machine:
 ```bash
 # you can trigger commands via ssh on the destination machine like this
 ssh other-machine "hostname && ls -alh"
+```
+
+## Copying directories
+
+```bash
+# scp needs -r to copy a whole directory
+scp -r myfolder/ other-machine:
+
+# rsync is faster for repeated copies (only transfers changes)
+rsync -av myfolder/ other-machine:myfolder/
 ```

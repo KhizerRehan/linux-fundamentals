@@ -1,16 +1,16 @@
 # Cronjobs
 
-In this lab you will learn how to schedule processes periodicaly.
+In this lab you will learn how to schedule processes periodically.
 
 ```bash
 
-# list all existing cronjobs (none, yet)
+# list all existing cronjobs (none yet)
 crontab -l
 
 # open the cronjob editor
 crontab -e
 
-# add a cronjob via appending the following line (which executes the command every minute)
+# add a cronjob by appending the following line (which executes the command every minute)
 * * * * * date >> /root/cron_output.log
 
 # verify the cronjob is working (maybe you have to wait for a minute for it), you can exit the command `watch` via <CTRL>+<C>

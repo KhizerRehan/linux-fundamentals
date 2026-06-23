@@ -2,13 +2,13 @@
 
 In this lab you will learn some useful tools to handle networking.
 
-## Getting your IP Adresses
+## Getting your IP Addresses
 
 ```bash
-# getting the ip address of your internal network
+# getting the IP address of your internal network
 ip address
 
-# getting the external ip address (you can also use https://ipinfo.io/ip ;) )
+# getting the external IP address (you can also use https://ipinfo.io/ip ;) )
 curl https://wtfismyip.com/json
 ```
 
@@ -19,7 +19,7 @@ curl https://wtfismyip.com/json
 apt install -y nginx
 
 # check the state of the nginx service (note that you get the service config file with this command)
-# you can exit via pressing the key q
+# you can exit by pressing the key q
 systemctl status nginx
 
 # take a look into this file (this is how you configure services in Linux, but that is out of scope for this training)
@@ -29,7 +29,7 @@ cat /lib/systemd/system/nginx.service
 ## Accessing the Webserver
 
 ```bash
-# get the html response via curl
+# get the HTML response via curl
 curl localhost
 
 # stop the nginx service
@@ -70,7 +70,7 @@ nslookup google.com
 
 ## Getting info about ports
 
-Sometimes you are in the situation that some port is used by an application which you are not aware of. The following commands can be very helpful in those situations.
+Sometimes you are in a situation where some port is used by an application you are not aware of. The following commands can be very helpful in those situations.
 
 ```bash
 # install the package containing the netstat tool
@@ -95,7 +95,7 @@ while true; do curl -I http://localhost:80; sleep 1s; done;
 # install the package containing apache-ab
 apt install -y apache2-utils
 
-# send 1000 requests with concurrency set to 100 to our webserver (please note the last `/`, apache-ab is a little bit picky here)
+# send 1000 requests with concurrency set to 100 to our webserver (please note the trailing `/`, apache-ab is a little bit picky here)
 ab -n 1000 -c 100 http://localhost:80/
 ```
 

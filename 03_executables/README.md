@@ -24,11 +24,11 @@ apt install -y golang
 # check if it got installed properly
 go version
 
-# take a look at the source code
-cat 03_executables/my-executable.go
+# take a look at the sourcecode
+cat /training/03_executables/my-executable.go
 
 # build the application
-go build 03_executables/my-executable.go
+go build /training/03_executables/my-executable.go
 
 # the executable with the name `my-executable` should now exist
 ls -alh
@@ -46,7 +46,7 @@ ls -alh
 # switch to the directory /
 cd /
 
-# since the executable does not exist in the directory /root/ this will not work
+# due to the executable does not exist in the current directory / this will not work
 ./my-executable
 
 # also the binary is not in the path, so this will not provide any info

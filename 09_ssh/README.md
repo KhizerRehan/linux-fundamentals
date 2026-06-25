@@ -111,11 +111,16 @@ ssh other-machine "hostname && ls -alh"
 ## Copying directories
 
 ```bash
-# create a directory
+# create a directory containing a file
 mkdir <YOUR_NAME>
+touch <YOUR_NAME>/somefile.txt
 
 # scp needs -r to copy a whole directory
 scp -r <YOUR_NAME>/ other-machine:<YOUR_NAME>
+
+# verify
+ssh other-machine "hostname && ls -alh /root/"
+ssh other-machine "hostname && ls -alh /root/<YOUR_NAME>"
 
 # rsync is faster for repeated copies (only transfers changes)
 rsync -av <YOUR_NAME>/ other-machine:<YOUR_NAME>/

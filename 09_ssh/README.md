@@ -111,6 +111,10 @@ ssh other-machine "hostname && ls -alh"
 ## Copying directories
 
 ```bash
+# create a directory with a file to copy
+mkdir -p myfolder
+echo "something" > myfolder/file.txt
+
 # scp needs -r to copy a whole directory
 scp -r myfolder/ other-machine:
 

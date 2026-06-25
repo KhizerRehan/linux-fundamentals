@@ -67,8 +67,8 @@ man mkdir
 mkdir -p my-parent-dir/my-sub-dir
 ls -alh
 
-# visualize the directory structure as a tree
-tree my-parent-dir
+# visualize the directory structure recursively
+ls -R my-parent-dir
 
 # jump into the sub directory
 cd my-parent-dir/my-sub-dir
